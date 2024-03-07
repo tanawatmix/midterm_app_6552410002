@@ -1,74 +1,71 @@
-// ignore_for_file: sort_child_properties_last, prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:midterms_app_6552410002/views/search_ui.dart';
 
-
-class MyProUI extends StatefulWidget {
-  const MyProUI({super.key});
+class MyProfileUI extends StatefulWidget {
+  const MyProfileUI({Key? key}) : super(key: key);
 
   @override
-  State<MyProUI> createState() => __MyProUIState();
+  State<MyProfileUI> createState() => _MyProfileUIState();
 }
 
-class __MyProUIState extends State<MyProUI> {
+class _MyProfileUIState extends State<MyProfileUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: GestureDetector(
+      body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.only(
-            left: MediaQuery.of(context).size.width * 0.1,
-            right: MediaQuery.of(context).size.width * 0.1,
-          ),
+          padding: EdgeInsets.symmetric(horizontal: 20),
           child: Center(
             child: Column(
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.07,
+                  height: MediaQuery.of(context).size.height * 0.05,
+                ),
+                Align(
+                    alignment: Alignment.topRight,
+                    child: InkWell(
+                        onTap: () {},
+                        child: Padding(
+                          padding: const EdgeInsets.all(2.0),
+                          child: Icon(Icons.search),
+                        ))),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.03,
                 ),
                 CircleAvatar(
                   radius: MediaQuery.of(context).size.width * 0.20,
-                  backgroundColor: Color.fromARGB(255, 255, 255, 255),
-                  child: Image.asset(
-                    'assets/icons/01.jpg',
-                    width: MediaQuery.of(context).size.width * 0.25,
+                  backgroundImage: AssetImage('assets/images/01.jpg'),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.03,
+                ),
+                Text(
+                  'KaiTodUFC',
+                  style: GoogleFonts.kanit(
+                    color: Colors.black,
+                    fontSize: MediaQuery.of(context).size.height * 0.08,
                   ),
                 ),
-                
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.05,
+                Text(
+                  'Tanawat Netsutthirot \n       ID:6552410002',
+                  style: GoogleFonts.kanit(
+                    color: Colors.black,
+                    fontSize: MediaQuery.of(context).size.height * 0.02,
+                  ),
                 ),
-                Text( 
-                'TANA 02',
-                style: TextStyle(
-                      fontFamily: 'Kanit',
-                      fontWeight: FontWeight.bold,
-                    ),
-                
-              ),
-               SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.05,
-                ),
-                Text( 
-                'tanawat netsutthirot \n ID:6552410002',
-                style: TextStyle(
-                      fontFamily: 'Kanit',
-                      fontWeight: FontWeight.bold,
-                    ),
-                
-              ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.05,
+                  height: MediaQuery.of(context).size.height * 0.03,
                 ),
                 ElevatedButton(
                   onPressed: () {},
                   child: Text(
-                    'FOLLOW ME',
-                    style: TextStyle(
-                      fontFamily: 'Kanit',
-                      fontWeight: FontWeight.bold,
+                    'FOLLOW  ME',
+                    style: GoogleFonts.kanit(
+                      color: Colors.white,
+                      fontSize: MediaQuery.of(context).size.height * 0.02,
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
@@ -76,10 +73,13 @@ class __MyProUIState extends State<MyProUI> {
                         MediaQuery.of(context).size.height * 0.06),
                     backgroundColor: Colors.black,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
+                      borderRadius: BorderRadius.circular(5.0),
                       side: BorderSide(color: Colors.black),
                     ),
                   ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.02,
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -90,20 +90,37 @@ class __MyProUIState extends State<MyProUI> {
                   },
                   child: Text(
                     'SEARCH',
-                    style: TextStyle(
-                      fontFamily: 'Kanit',
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: GoogleFonts.kanit(
+                        color: Colors.black,
+                        fontSize: MediaQuery.of(context).size.height * 0.02,
+                        fontWeight: FontWeight.bold),
                   ),
                   style: ElevatedButton.styleFrom(
-                    fixedSize: Size(MediaQuery.of(context).size.width * 0.9,
-                        MediaQuery.of(context).size.height * 0.06),
                     backgroundColor: Colors.white,
+                    fixedSize: Size(1000, 50),
+                    side: BorderSide(color: Colors.black),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                      side: BorderSide(color: Colors.black),
+                      borderRadius: BorderRadius.circular(5.0),
                     ),
                   ),
+                ),
+                GridView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                    crossAxisSpacing: 7,
+                    mainAxisSpacing: 7,
+                  ),
+                  itemCount: 26,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Image.asset(
+                      'assets/images/${index + 1}.jpg',
+                      width: MediaQuery.of(context).size.width * 0.3,
+                      height: MediaQuery.of(context).size.width * 0.3,
+                      fit: BoxFit.cover,
+                    );
+                  },
                 ),
               ],
             ),
