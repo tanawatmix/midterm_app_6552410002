@@ -1,16 +1,7 @@
-# midterms_app_6552410002
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## midterms_app_6552410002
+##
+![enter image description here](https://github.com/tanawatmix/midterm_app_6552410002/blob/master/mt1.jpg?raw=true)
+##
+![enter image description here](https://github.com/tanawatmix/midterm_app_6552410002/blob/master/mt2.jpg?raw=true)
+##
+![enter image description here](https://github.com/tanawatmix/midterm_app_6552410002/blob/master/mt3.jpg?raw=true)
